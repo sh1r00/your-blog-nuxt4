@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES — M3 Dark Code-Editor Theme
+   ============================================ */
+
+@layer base {
+  :root {
+    --color-primary: #2563eb;
+    --color-surface: #f8fafc;
+    --color-surface-elevated: #ffffff;
+    --color-text: #0f172a;
+    --color-text-secondary: #475569;
+    --color-border: #e2e8f0;
+    --color-accent: #06b6d4;
+    --color-code-bg: #1e293b;
+    --color-code-text: #e2e8f0;
+    color-scheme: light;
+  }
+
+  .dark {
+    --color-primary: #3b82f6;
+    --color-surface: #0f1729;
+    --color-surface-elevated: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-secondary: #94a3b8;
+    --color-border: #334155;
+    --color-accent: #22d3ee;
+    --color-code-bg: #0f1729;
+    --color-code-text: #e2e8f0;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[var(--color-surface)] text-[var(--color-text)] font-sans antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Skip-to-content link */
+  .skip-link {
+    @apply absolute top-0 left-2 z-50 px-4 py-2 bg-primary text-white rounded-b-md
+           transform -translate-y-full focus:translate-y-0 transition-transform;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary rounded;
+  }
+}
+
+/* ============================================
+   PROSE STYLES FOR BLOG CONTENT
+   ============================================ */
+
+@layer components {
+  .prose {
+    @apply max-w-none text-[var(--color-text)] leading-relaxed;
+  }
+
+  .prose h1 {
+    @apply text-3xl font-bold mt-10 mb-4 text-[var(--color-text)] tracking-tight;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-[var(--color-text)] border-b border-[var(--color-border)] pb-2;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-6 mb-3 text-[var(--color-text)];
+  }
+
+  .prose h4 {
+    @apply text-lg font-medium mt-4 mb-2 text-[var(--color-text)];
+  }
+
+  .prose p {
+    @apply mb-4 leading-7;
+  }
+
+  .prose a {
+    @apply text-primary underline decoration-primary/30 hover:decoration-primary
+           underline-offset-2 transition-colors;
+  }
+
+  .prose strong {
+    @apply font-semibold text-[var(--color-text)];
+  }
+
+  .prose ul {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6 mb-4 space-y-1;
+  }
+
+  .prose li {
+    @apply mb-1;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 my-6 italic text-[var(--color-text-secondary)];
+  }
+
+  .prose hr {
+    @apply border-[var(--color-border)] my-8;
+  }
+
+  .prose table {
+    @apply w-full border-collapse my-6 text-sm;
+  }
+
+  .prose th {
+    @apply border border-[var(--color-border)] bg-[var(--color-surface-elevated)]
+           px-4 py-2 text-left font-semibold;
+  }
+
+  .prose td {
+    @apply border border-[var(--color-border)] px-4 py-2;
+  }
+
+  .prose img {
+    @apply rounded-lg max-w-full my-6;
+  }
+
+  .prose :not(pre) > code {
+    @apply bg-[var(--color-code-bg)] text-[var(--color-code-text)]
+           px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+}
+
+/* ============================================
+   CODE BLOCK STYLES — SYNTAX HIGHLIGHTING
+   ============================================ */
+
+@layer components {
+  .code-block-wrapper {
+    @apply relative my-6 rounded-lg overflow-hidden border border-[var(--color-border)];
+    background: var(--color-code-bg);
+  }
+
+  .code-block-header {
+    @apply flex items-center justify-between px-4 py-2 text-xs font-mono;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-code-text);
+    opacity: 0.7;
+  }
+
+  .code-block-header .lang-tag {
+    @apply uppercase tracking-wider font-semibold;
+  }
+
+  .code-block-copy {
+    @apply px-2 py-1 rounded text-xs transition-colors cursor-pointer
+           hover:bg-white/10 focus:bg-white/10;
+  }
+
+  pre {
+    @apply overflow-x-auto p-4 m-0;
+    background: var(--color-code-bg);
+  }
+
+  pre code {
+    @apply text-sm leading-relaxed;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--color-code-text);
+  }
+
+  /* Syntax highlighting tokens */
+  .hljs-keyword { color: #c792ea; }
+  .hljs-string  { color: #c3e88d; }
+  .hljs-number  { color: #f78c6c; }
+  .hljs-comment { color: #546e7a; font-style: italic; }
+  .hljs-function { color: #82aaff; }
+  .hljs-type    { color: #ffcb6b; }
+  .hljs-builtin  { color: #89ddff; }
+  .hljs-property { color: #80cbc4; }
+  .hljs-params   { color: #f78c6c; }
+  .hljs-literal  { color: #f78c6c; }
+  .hljs-title    { color: #82aaff; }
+  .hljs-meta     { color: #89ddff; }
+  .hljs-attr     { color: #c792ea; }
+  .hljs-tag      { color: #f07178; }
+  .hljs-name     { color: #f07178; }
+  .hljs-selector-class { color: #ffcb6b; }
+  .hljs-selector-id    { color: #f78c6c; }
+  .hljs-variable  { color: #eeffff; }
+  .hljs-operator  { color: #89ddff; }
+  .hljs-punctuation { color: #89ddff; }
+}
+
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+
+@layer components {
+  .container-page {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-content {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .card {
+    @apply bg-[var(--color-surface-elevated)] border border-[var(--color-border)]
+           rounded-xl transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium
+           bg-primary text-white transition-all duration-200
+           hover:brightness-110 focus-visible:ring-2 focus-visible:ring-primary/50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium
+           border border-[var(--color-border)] transition-all duration-200
+           hover:bg-[var(--color-surface-elevated)];
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary/10 text-primary;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent/10 text-accent;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg border border-[var(--color-border)]
+           bg-[var(--color-surface)] text-[var(--color-text)] font-sans
+           transition-colors duration-200
+           placeholder:text-[var(--color-text-secondary)]
+           focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary;
+  }
+
+  .text-area-field {
+    @apply input-field resize-y min-h-[140px];
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ============================================
+   SCROLLBAR (dark-mode friendly)
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .skip-link,
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}

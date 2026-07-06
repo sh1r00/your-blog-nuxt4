@@ -1,0 +1,90 @@
+{
+  "site": {
+    "title": "ዴቭብሎግ",
+    "description": "በሶፍትዌር ምህንድስና፣ አርክቴክቸር እና የድር መድረክ ላይ ሀሳቦች።",
+    "skipToContent": "ወደ ዋናው ይዘት ዝለል"
+  },
+  "nav": {
+    "home": "መነሻ",
+    "about": "ስለ",
+    "contact": "አግኙን",
+    "search": "ፈልግ",
+    "categories": "ምድቦች",
+    "tags": "መለያዎች"
+  },
+  "home": {
+    "heroTitle": "የቅርብ ጽሑፎች",
+    "heroSubtitle": "በዘመናዊ ሶፍትዌር ምህንድስና ላይ ጥልቅ ምርመራዎች",
+    "searchPlaceholder": "ጽሑፎችን ይፈልጉ...",
+    "allCategories": "ሁሉም ምድቦች",
+    "allTags": "ሁሉም መለያዎች",
+    "noPosts": "ምንም ጽሑፍ አልተገኘም።",
+    "readMore": "ተጨማሪ ያንብቡ",
+    "featured": "የተለየ"
+  },
+  "blog": {
+    "publishedOn": "የታተመበት ቀን",
+    "by": "በ",
+    "tableOfContents": "ይዘት ማውጫ",
+    "share": "አጋራ",
+    "copyLink": "አገናኝ ቅዳ",
+    "linkCopied": "አገናኝ ተቀድቷል!",
+    "tags": "መለያዎች",
+    "category": "ምድብ",
+    "relatedPosts": "ተዛማጅ ጽሑፎች",
+    "minutesRead": "ደቂቃ ንባብ",
+    "backToBlog": "ወደ ብሎግ ተመለስ",
+    "printedFrom": "የታተመበት"
+  },
+  "about": {
+    "title": "ስለ",
+    "intro": "ሰላም፣ እኔ አሌክስ ነኝ — ከፍተኛ አፈጻጸም ያላቸውን የድር መተግበሪያዎች በመገንባት እና እውቀትን በማካፈል የሚደሰት የሶፍትዌር መሐንዲስ።",
+    "bio": "ከአስር ዓመታት በላይ ኮድ እየጻፍኩ ነው፣ ከReact እና Vue እስከ Node.js እና ክላውድ መሠረተ ልማት ድረስ ሙሉ ስታክ ላይ እሰራለሁ። ይህ ብሎግ ቅጦችን፣ የተማርኳቸውን ትምህርቶች እና ሙከራዎችን የምመዘግብበት ነው።",
+    "techStack": "የቴክኖሎጂ ስታክ",
+    "interests": "ፍላጎቶች",
+    "socials": "ይገናኙ"
+  },
+  "contact": {
+    "title": "ያግኙን",
+    "subtitle": "ጥያቄ አለዎት ወይም መተባበር ይፈልጋሉ? መልዕክት ይላኩልኝ።",
+    "name": "ስም",
+    "namePlaceholder": "ስምዎን ያስገቡ",
+    "email": "ኢሜይል",
+    "emailPlaceholder": "እርስዎ[at]ምሳሌ.com",
+    "subject": "ርዕሰ ጉዳይ",
+    "subjectPlaceholder": "ይህ ስለ ምንድን ነው?",
+    "message": "መልዕክት",
+    "messagePlaceholder": "መልዕክትዎን እዚህ ይጻፉ...",
+    "send": "መልዕክት ላክ",
+    "success": "መልዕክት በተሳካ ሁኔታ ተልኳል!",
+    "error": "የሆነ ችግር ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።"
+  },
+  "search": {
+    "title": "የፍለጋ ውጤቶች",
+    "placeholder": "ለመፈለግ ይጻፉ...",
+    "noResults": "ለፍለጋዎ ምንም ውጤት አልተገኘም።",
+    "resultsFor": "ውጤቶች ለ",
+    "searching": "በመፈለግ ላይ..."
+  },
+  "category": {
+    "title": "ምድብ",
+    "noPosts": "በዚህ ምድብ ውስጥ ምንም ጽሑፍ የለም።"
+  },
+  "tag": {
+    "title": "መለያ",
+    "noPosts": "በዚህ መለያ ምንም ጽሑፍ የለም።"
+  },
+  "footer": {
+    "builtWith": "በNuxt 4 የተገነባ",
+    "allRightsReserved": "መብቱ በህግ የተጠበቀ ነው።"
+  },
+  "darkMode": {
+    "toggle": "የጨለማ ሁነታን ቀያይር",
+    "light": "ብርሃን ሁነታ",
+    "dark": "ጨለማ ሁነታ"
+  },
+  "errors": {
+    "notFound": "ገጽ አልተገኘም",
+    "notFoundMessage": "የሚፈልጉት ገጽ የለም ወይም ተዛውሯል።"
+  }
+}

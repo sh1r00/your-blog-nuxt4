@@ -1,0 +1,90 @@
+{
+  "site": {
+    "title": "DevBlog",
+    "description": "Reflexiones sobre ingeniería de software, arquitectura y la plataforma web.",
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "search": "Buscar",
+    "categories": "Categorías",
+    "tags": "Etiquetas"
+  },
+  "home": {
+    "heroTitle": "Últimos Artículos",
+    "heroSubtitle": "Exploraciones profundas de la ingeniería de software moderna",
+    "searchPlaceholder": "Buscar artículos...",
+    "allCategories": "Todas las Categorías",
+    "allTags": "Todas las Etiquetas",
+    "noPosts": "No se encontraron artículos.",
+    "readMore": "Leer más",
+    "featured": "Destacado"
+  },
+  "blog": {
+    "publishedOn": "Publicado el",
+    "by": "por",
+    "tableOfContents": "Tabla de Contenidos",
+    "share": "Compartir",
+    "copyLink": "Copiar enlace",
+    "linkCopied": "¡Enlace copiado!",
+    "tags": "Etiquetas",
+    "category": "Categoría",
+    "relatedPosts": "Artículos Relacionados",
+    "minutesRead": "min de lectura",
+    "backToBlog": "Volver al blog",
+    "printedFrom": "Impreso desde"
+  },
+  "about": {
+    "title": "Acerca de",
+    "intro": "Hola, soy Alex — ingeniero de software apasionado por construir aplicaciones web de alto rendimiento y compartir conocimiento.",
+    "bio": "He estado escribiendo código por más de una década, trabajando en todo el stack desde React y Vue hasta Node.js e infraestructura en la nube. Este blog es donde documento patrones, lecciones aprendidas y experimentos.",
+    "techStack": "Stack Tecnológico",
+    "interests": "Intereses",
+    "socials": "Conectar"
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Tienes una pregunta o quieres colaborar? Envíame un mensaje.",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu[at]ejemplo.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "¿De qué se trata?",
+    "message": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Algo salió mal. Inténtalo de nuevo."
+  },
+  "search": {
+    "title": "Resultados de Búsqueda",
+    "placeholder": "Escribe para buscar...",
+    "noResults": "No se encontraron resultados para tu búsqueda.",
+    "resultsFor": "Resultados para",
+    "searching": "Buscando..."
+  },
+  "category": {
+    "title": "Categoría",
+    "noPosts": "No hay artículos en esta categoría."
+  },
+  "tag": {
+    "title": "Etiqueta",
+    "noPosts": "No hay artículos con esta etiqueta."
+  },
+  "footer": {
+    "builtWith": "Construido con Nuxt 4",
+    "allRightsReserved": "Todos los derechos reservados."
+  },
+  "darkMode": {
+    "toggle": "Alternar modo oscuro",
+    "light": "Modo claro",
+    "dark": "Modo oscuro"
+  },
+  "errors": {
+    "notFound": "Página no encontrada",
+    "notFoundMessage": "La página que buscas no existe o ha sido movida."
+  }
+}
