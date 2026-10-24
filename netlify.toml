@@ -1,7 +1,7 @@
 # Netlify deployment — Nuxt 4 static site (nuxt generate)
 [build]
   command = "npm install --legacy-peer-deps --no-audit --no-fund && npm run generate"
-  publish = ".output/public"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "24"
