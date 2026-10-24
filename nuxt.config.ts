@@ -23,24 +23,22 @@ export default defineNuxtConfig({
   i18n: {
     strategy: 'prefix',
     defaultLocale: 'en',
+    lazy: true,
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'es', iso: 'es-ES', name: 'Español' },
-      { code: 'am', iso: 'am-ET', name: 'አማርኛ' },
+      { code: 'en', language: 'en', iso: 'en-US', name: 'English' },
+      { code: 'es', language: 'es', iso: 'es-ES', name: 'Español' },
+      { code: 'am', language: 'am', iso: 'am-ET', name: 'አማርኛ' },
     ],
     compilation: { strictMessage: false },
     vueI18n: './i18n.config.ts',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-    },
+    detectBrowserLanguage: false,
   },
 
   pwa: {
     registerType: 'autoUpdate',
     devOptions: { enabled: false },
-    manifest: { name: 'App', short_name: 'App', theme_color: '#000000', background_color: '#ffffff', display: 'standalone' },
+    manifest: { name: 'DevBlog', short_name: 'DevBlog', theme_color: '#2563eb', background_color: '#ffffff', display: 'standalone' },
     workbox: { globPatterns: ['**/*.{js,css,html,png,svg,ico,woff2,json}'], navigateFallback: '/', cleanupOutdatedCaches: true, skipWaiting: true, clientsClaim: true,
       runtimeCaching: [
         { urlPattern: /\\.json$/, handler: 'StaleWhileRevalidate', options: { cacheName: 'i18n' } },
@@ -54,7 +52,7 @@ export default defineNuxtConfig({
     headers: process.env.NODE_ENV === "development" ? false : {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
-        'script-src': ["'self'", "'unsafe-inline'"],
+        'script-src': ["'self'", "'strict-dynamic'", "'nonce-{{nonce}}'"],
         'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         'font-src': ["'self'", 'https://fonts.gstatic.com', 'https://fonts.googleapis.com'],
         'img-src': ["'self'", 'data:', 'https:'],
@@ -65,13 +63,12 @@ export default defineNuxtConfig({
         'form-action': ["'self'"],
       },
     },
-    rateLimiter: false,
+    rateLimiter: { tokensPerInterval: 30, interval: 60000 },
     xssValidator: process.env.NODE_ENV !== "development",
   },
 
   app: {
     head: {
-      htmlAttrs: { lang: 'en' },
       titleTemplate: '%s | DevBlog',
       meta: [
         { charset: 'utf-8' },
@@ -135,4 +132,5 @@ export default defineNuxtConfig({
       include: ['@vue/devtools-core', '@vue/devtools-kit', 'pinia'],
     },
   },
+  nitro: { prerender: { failOnError: false } },
 })

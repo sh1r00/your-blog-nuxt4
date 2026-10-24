@@ -86,5 +86,11 @@
   "errors": {
     "notFound": "Página no encontrada",
     "notFoundMessage": "La página que buscas no existe o ha sido movida."
+  },
+  "pwa": {
+    "heading": "Instalar esta aplicación",
+    "description": "Instala esta aplicación para acceder sin conexión y disfrutar de una experiencia más rápida.",
+    "install": "Instalar",
+    "dismiss": "Descartar"
   }
 }

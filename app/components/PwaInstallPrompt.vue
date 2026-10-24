@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const pwaStore = usePwaInstallStore()
 </script>
 
@@ -14,8 +15,8 @@ const pwaStore = usePwaInstallStore()
     >
       <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6">
         <div class="flex-1 min-w-0">
-          <h2 id="pwa-heading" class="font-semibold text-lg text-on-surface">{{ $t('pwa.heading') }}</h2>
-          <p id="pwa-desc" class="text-sm text-on-surface-variant mt-0.5">{{ $t('pwa.description') }}</p>
+          <h2 id="pwa-heading" class="font-semibold text-lg text-on-surface">{{ t('pwa.heading') }}</h2>
+          <p id="pwa-desc" class="text-sm text-on-surface-variant mt-0.5">{{ t('pwa.description') }}</p>
         </div>
         <div class="flex items-center gap-3 shrink-0">
           <button
@@ -23,14 +24,14 @@ const pwaStore = usePwaInstallStore()
             class="px-5 py-2 rounded-lg bg-primary text-on-primary font-medium hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             @click="pwaStore.install()"
           >
-            {{ $t('pwa.install') }}
+            {{ t('pwa.install') }}
           </button>
           <button
             type="button"
             class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             @click="pwaStore.dismiss()"
           >
-            {{ $t('pwa.dismiss') }}
+            {{ t('pwa.dismiss') }}
           </button>
         </div>
       </div>
