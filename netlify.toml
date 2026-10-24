@@ -1,10 +1,10 @@
 # Netlify deployment — Nuxt 4 static site (nuxt generate)
 [build]
-  command = "npm run generate"
+  command = "npm install --legacy-peer-deps --no-audit --no-fund && npm run generate"
   publish = ".output/public"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "24"
 
 # SPA fallback for client-side routing
 [[redirects]]
