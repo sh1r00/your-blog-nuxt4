@@ -8,6 +8,11 @@
 
 # SPA fallback for client-side routing
 [[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+
+[[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/200.html"
   status = 200
