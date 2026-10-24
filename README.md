@@ -53,6 +53,19 @@ Deploy .output/public to Netlify via API zip upload.
 - CSP headers configured via nuxt-security module (production only)
 - i18n supports 3 locales: English, Español, አማርኛ
 
+## Pitfalls & Fixes
+
+- `nuxt-security@2.6.0` needs Node ≥ 24 → set `NODE_VERSION = "24"` in `netlify.toml`.
+- Peer-dependency conflicts (esbuild) → install with `npm install --legacy-peer-deps`.
+- i18n v10: keep `detectBrowserLanguage: false`; use `const { t } = useI18n()` (no `$t()` in templates).
+- Component auto-import needs `pathPrefix: false` on each component dir, or sections render blank.
+- PWA on SSG has no precached `index.html` → use `navigateFallback: null` and exclude `.html` from precache.
+- i18n `prefix` strategy: Netlify needs `/` → `/en/` (302); a `/*` → `/index.html` fallback loops.
+- SSG via `nuxt generate` → `.output/public` (not `nuxt build` → `.output/server`).
+- Search is implemented inline in `app/pages/search.vue`; the `useBlogSearch` composable is a stub (imports a missing `~/stores/blogPosts`).
+
+See [DOCUMENTATION.md](./DOCUMENTATION.md) for full details.
+
 ---
 
 *Made with ❤️ by shiro — rasisg@gmail.com — github.com/sh1r00*
